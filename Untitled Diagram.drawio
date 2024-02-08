@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-08T15:30:32.902Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="s--nm_NFGLTk88s9NVmQ" version="23.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-08T15:30:53.851Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="USl-UMlSAWj6UTgDUKi_" version="23.1.2" type="github">
   <diagram name="Page-1" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
     <mxGraphModel dx="1728" dy="615" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
@@ -25,6 +25,9 @@
         <mxCell id="uieNsBROH1hkp_Cc9gUN-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uieNsBROH1hkp_Cc9gUN-12" target="uieNsBROH1hkp_Cc9gUN-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="uieNsBROH1hkp_Cc9gUN-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uieNsBROH1hkp_Cc9gUN-12" target="uieNsBROH1hkp_Cc9gUN-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="uieNsBROH1hkp_Cc9gUN-12" value="Главная страница" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="400" y="350" width="120" height="60" as="geometry" />
         </mxCell>
@@ -36,6 +39,9 @@
         </mxCell>
         <mxCell id="uieNsBROH1hkp_Cc9gUN-19" value="Просмотр сегодняшних перевозок" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="400" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uieNsBROH1hkp_Cc9gUN-21" value="Поиск клиентов" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="350" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
