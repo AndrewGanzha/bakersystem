@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-20T07:38:07.342Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="k1zJDPKTNNSjqe5cbh_L" version="23.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-04-20T07:38:43.368Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="HKI_-kvqWjFpb5EJx7LI" version="23.1.2" type="github">
   <diagram name="Page-1" id="S_R4FNiDpLBkSJHHHjHs">
     <mxGraphModel dx="545" dy="319" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -35,7 +35,7 @@
             <mxPoint x="436" y="210" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e4NpVtd8T14tz6gKkzuD-13" value="ГОСТы" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e4NpVtd8T14tz6gKkzuD-7">
+        <mxCell id="e4NpVtd8T14tz6gKkzuD-13" value="Правила и ГОСТы" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e4NpVtd8T14tz6gKkzuD-7">
           <mxGeometry x="-0.178" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -68,7 +68,7 @@
             <mxPoint x="530.04" y="339.99999999999994" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e4NpVtd8T14tz6gKkzuD-18" value="Бухгалтерская система" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e4NpVtd8T14tz6gKkzuD-16">
+        <mxCell id="e4NpVtd8T14tz6gKkzuD-18" value="Бухгалтерский&lt;br&gt;&amp;nbsp;отдел" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e4NpVtd8T14tz6gKkzuD-16">
           <mxGeometry x="0.0525" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
