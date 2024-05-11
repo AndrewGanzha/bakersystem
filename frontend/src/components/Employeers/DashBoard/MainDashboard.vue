@@ -7,7 +7,14 @@
     :items="orders"
     item-value="name"
     @update:options="itemsPerPage"
-  ></v-data-table>
+  >
+    <template v-slot:item.OrderIsTransporting="{ value }">
+      <div class="d-flex">
+        {{ value ? 'Да' : 'Нет' }}
+        <button v-if="value">Назначить ответственного</button>
+      </div>
+    </template>
+  </v-data-table>
 </template>
 
 <script setup>
@@ -19,7 +26,6 @@ let orders = ref([]);
 const itemsPerPage = ref(20);
 const headers = [
   {title: 'Вес груза', key: 'OrderWeight'},
-  {title: 'Вид зерна', key: 'OrderCategory'},
   {title: 'Вид зерна', key: 'OrderCategory'},
   {title: 'Стоимость заявки', key: 'OrderPrice'},
   {title: 'Нужна ли перевозка?', key: 'OrderIsTransporting' }
