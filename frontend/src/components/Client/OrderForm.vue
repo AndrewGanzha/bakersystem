@@ -1,5 +1,7 @@
 <template>
-    <v-card class="mx-auto" width="400">
+    <v-card class="mx-auto px-3" width="400">
+      <v-btn class="mt-2" type="submit" block @click="router.push('.')">Вернуться назад</v-btn>
+
       <v-card-text>Пожалуйста, укажите полную информацию о заказе, а также корректные контактные данные, чтобы мы смогли связаться с Вами для утверждения заявки</v-card-text>
       <v-form @submit.prevent>
 
@@ -72,8 +74,10 @@
 import {computed, reactive} from "vue";
 import {CustomerType, OrderType} from "../../types/types";
 import {supabase} from "../../service/dataBaseConnetct";
+import {useRouter} from "vue-router";
 
 const orderTypes = ['Цельнозерновые', 'Фасовонно-зерновые']
+const router = useRouter();
 
 const formCustomerValue: CustomerType = reactive({
   CustomerName: '',
