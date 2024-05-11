@@ -7,6 +7,7 @@
 
         <div>
           <v-text-field
+            req
             v-model="formCustomerValue.CustomerName"
             label="Введите ФИО в формате: Фамилия И.О."
           ></v-text-field>
@@ -75,6 +76,7 @@ import {computed, reactive} from "vue";
 import {CustomerType, OrderType} from "../../types/types";
 import {supabase} from "../../service/dataBaseConnetct";
 import {useRouter} from "vue-router";
+import {searchUserByName} from "../../service/api";
 
 const orderTypes = ['Цельнозерновые', 'Фасовонно-зерновые']
 const router = useRouter();
@@ -98,17 +100,32 @@ const formOrderValue: OrderType = reactive({
 let number = 222;
 
 async function sendOrder() {
-  const { customerData, customerError } = await supabase
-    .from('Customers')
-    .insert([
-      {
-        CustomerPhone: formCustomerValue.CustomerPhone,
-        CustomerPayment: formCustomerValue.CustomerPayment,
-        CustomerEmail: formCustomerValue.CustomerEmail,
-        CustomerName: formCustomerValue.CustomerName
-      }
-    ])
-    .select()
+  let currentUser = await searchUserByName(formCustomerValue.CustomerName);
+
+
+  if (!currentUser.length > 0) {
+    const { customerData, customerError } = await supabase
+      .from('Customers')
+      .insert([
+        {
+          CustomerPhone: formCustomerValue.CustomerPhone,
+          CustomerPayment: formCustomerValue.CustomerPayment,
+          CustomerEmail: formCustomerValue.CustomerEmail,
+          CustomerName: formCustomerValue.CustomerName
+        }
+      ])
+      .select()
+  } else {
+    const { customerData, customerError } = await supabase
+      .from('Customers')
+      .update({
+        'CustomerPhone': formCustomerValue.CustomerPhone,
+        'CustomerPayment': formCustomerValue.CustomerPayment,
+        'CustomerEmail': formCustomerValue.CustomerEmail,
+      })
+      .eq('CustomerName',formCustomerValue.CustomerName)
+      .select()
+  }
 
   const { orderData, orderError } = await supabase
     .from('Orders')
@@ -119,7 +136,8 @@ async function sendOrder() {
         OrderWeight: formOrderValue.OrderWeight,
         OrderIsTransporting: formOrderValue.OrderIsTransporting,
         OrderPetentionPeriod: formOrderValue.OrderPetentionPeriod,
-        OrderAdress: formOrderValue.OrderAddress
+        OrderAdress: formOrderValue.OrderAddress,
+        CustomerName: formCustomerValue.CustomerName
       },
     ])
     .select()

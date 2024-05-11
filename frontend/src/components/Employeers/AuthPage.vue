@@ -46,10 +46,16 @@
 <script setup>
 import { ref } from 'vue';
 import {supabase} from "../../service/dataBaseConnetct";
+import {user} from "../../stores/app";
 
 const router = useRouter()
 const email = ref('')
 const passwrod = ref('')
+const userStore = user();
+
+onMounted(() => {
+  userStore.setUserFromServer(null);
+})
 
 async function tryAuth() {
     const { data, error } = await supabase.auth.signInWithPassword({
@@ -60,6 +66,8 @@ async function tryAuth() {
   if (error) {
     alert('Ошибка авторизации!')
   } else {
+
+    await userStore.setUserFromServer(data.user);
     router.push('/dashboard')
   }
 }
