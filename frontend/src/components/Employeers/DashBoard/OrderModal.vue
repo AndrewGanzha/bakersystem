@@ -44,8 +44,9 @@
 
 <script setup lang="ts">
 import {computed, defineProps, onMounted, ref, watch} from "vue";
-import {getAllFreeEmployeers, getAllFreeTransport} from "../../../service/api";
+import {getAllFreeEmployeers, getAllFreeTransport, getAllOrdersInQueue} from "../../../service/api";
 import {supabase} from "../../../service/dataBaseConnetct";
+import { orders } from "../../../stores/app";
 
 let filledOrder = computed(() => {
   let defaultObj = props.order;
@@ -61,7 +62,7 @@ let filledOrder = computed(() => {
 })
 let transportNumbers = ref([]);
 let employeeNames = ref([]);
-
+let orderStore = orders();
 let selectTransport = ref<number>()
 let selectEmployee = ref<string>('')
 
@@ -83,6 +84,7 @@ async function postNewOrder() {
 
   await setEmployeerBusy()
   await setTransportBusy()
+  await orderStore.setOrdersInQueue(getAllOrdersInQueue());
 }
 
 async function setEmployeerBusy() {

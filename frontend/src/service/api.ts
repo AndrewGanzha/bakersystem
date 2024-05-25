@@ -37,3 +37,21 @@ export async function getAllFreeEmployeers(): Promise<any[]> {
     console.error('Something went wrong');
   }
 }
+
+export async function getAllOrdersInQueue(): Promise<any[]> {
+  let { data: Orders, error } = await supabase
+    .from('Orders')
+    .select('*')
+    .eq('OrderInWork', 'false')
+
+  return Orders;
+}
+
+export async function getAllOrdersInWork(): Promise<any[]> {
+  let { data: Orders, error } = await supabase
+    .from('Orders')
+    .select('*')
+    .eq('OrderInWork', 'true')
+
+  return Orders;
+}

@@ -4,7 +4,7 @@
   <v-data-table
     v-model:items-per-page="itemsPerPage"
     :headers="headers"
-    :items="orders"
+    :items="orderStore.ordersInQueue"
     item-value="name"
     @update:options="itemsPerPage"
   >
@@ -37,9 +37,11 @@
 import AsideMenu from "../AsideMenu";
 import { supabase } from "../../../service/dataBaseConnetct";
 import { ref } from 'vue';
+import { orders } from "../../../stores/app";
 import OrderModal from "./OrderModal";
 
-let orders = ref([]);
+const orderStore = orders();
+
 const itemsPerPage = ref(20);
 const headers = [
   {title: 'Вес груза', key: 'OrderWeight'},
@@ -57,7 +59,7 @@ onMounted(async () => {
     .select('*')
     .eq('OrderInWork', 'false')
 
-  orders.value = Orders;
+  await orderStore.setOrdersInQueue(Orders);
 })
 </script>
 
