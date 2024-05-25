@@ -26,8 +26,8 @@
       </div>
     </template>
 
-    <template v-slot:item.confirm>
-      <OrderModal :order="item"/>
+    <template v-slot:item.id="{ item }">
+      <OrderModal :order="item" />
     </template>
   </v-data-table>
 
@@ -48,7 +48,7 @@ const headers = [
   {title: 'Стоимость заявки', key: 'OrderPrice'},
   {title: 'Нужна ли перевозка?', key: 'OrderIsTransporting' },
   {title: 'Адрес', key: 'OrderAdress' },
-  {title: '', key: 'confirm'}
+  {title: '', key: 'id'}
 ]
 
 onMounted(async () => {
