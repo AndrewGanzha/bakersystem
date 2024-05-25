@@ -55,6 +55,7 @@ onMounted(async () => {
   let { data: Orders, error } = await supabase
     .from('Orders')
     .select('*')
+    .eq('OrderInWork', 'false')
 
   orders.value = Orders;
 })

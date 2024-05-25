@@ -77,7 +77,7 @@ onMounted(async () => {
 async function postNewOrder() {
   const { data, error } = await supabase
     .from('Orders')
-    .update({ TransportId: selectTransport.value, EmployeeName: selectEmployee.value })
+    .update({ TransportId: selectTransport.value, EmployeeName: selectEmployee.value, OrderInWork: true })
     .eq('id', props.order.id)
     .select()
 

@@ -137,7 +137,8 @@ async function sendOrder() {
         OrderIsTransporting: formOrderValue.OrderIsTransporting,
         OrderPetentionPeriod: formOrderValue.OrderPetentionPeriod,
         OrderAdress: formOrderValue.OrderAddress,
-        CustomerName: formCustomerValue.CustomerName
+        CustomerName: formCustomerValue.CustomerName,
+        OrderInWork: false
       },
     ])
     .select()
