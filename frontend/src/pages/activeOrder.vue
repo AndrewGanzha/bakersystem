@@ -1,5 +1,5 @@
 <template>
-<ActiveOrder/>
+  <active-order-page/>
 </template>
 
 <style scoped>
