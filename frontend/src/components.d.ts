@@ -8,9 +8,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ActiveOrderPage: typeof import('./components/Employeers/DashBoard/ActiveOrderPage.vue')['default']
+    ArchivePage: typeof import('./components/Employeers/DashBoard/ArchivePage.vue')['default']
     AsideMenu: typeof import('./components/Employeers/AsideMenu.vue')['default']
     AuthPage: typeof import('./components/Employeers/AuthPage.vue')['default']
     ClientsPage: typeof import('./components/Employeers/DashBoard/ClientsPage.vue')['default']
+    EmployeersPage: typeof import('./components/Employeers/DashBoard/EmployeersPage.vue')['default']
     MainDashboard: typeof import('./components/Employeers/DashBoard/MainDashboard.vue')['default']
     OrderForm: typeof import('./components/Client/OrderForm.vue')['default']
     OrderModal: typeof import('./components/Employeers/DashBoard/OrderModal.vue')['default']
