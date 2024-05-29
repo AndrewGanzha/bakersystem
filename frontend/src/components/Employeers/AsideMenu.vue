@@ -5,7 +5,7 @@
     <v-list-item link title="Главная страница" @click="router.push('/dashboard')"></v-list-item>
     <v-list-item link title="Активные заказы" @click="router.push('/activeOrder')"></v-list-item>
     <v-list-item link title="Занятость помещений" @click="router.push('/premise')"></v-list-item>
-    <v-list-item link title="База клиентов"></v-list-item>
+    <v-list-item link title="База клиентов" @click="router.push('/clients')"></v-list-item>
     <v-list-item link title="Архив заявок"></v-list-item>
     <v-list-item link title="Спсиок сотрудников"></v-list-item>
   </v-navigation-drawer>

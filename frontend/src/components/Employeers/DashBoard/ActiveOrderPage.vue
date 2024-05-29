@@ -19,7 +19,6 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
 import {orders} from "../../../stores/app";
-import {getAllOrdersInWork} from "../../../service/api";
 import {supabase} from "../../../service/dataBaseConnetct";
 
 const orderStore = orders();
